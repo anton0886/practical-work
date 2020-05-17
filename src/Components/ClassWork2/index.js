@@ -19,7 +19,7 @@ const ClassWork2 = ({ clubData }) => {
             <table>
                 <tbody>
                 {
-                players.map((item,index)=> {
+                players.map((item,index) => {
                     return <PlayerInfo playerInfo={item} key={index}/>
                 })
                 }
