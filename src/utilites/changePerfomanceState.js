@@ -4,8 +4,6 @@ const changePerfomanceState = (id,setToDoList) => {
     itemToChange.done = !itemToChange.done;
     localStorage.setItem('toDoList',JSON.stringify(toDoList));
     setToDoList(toDoList);
- 
-    
 }
 
 export default changePerfomanceState;
