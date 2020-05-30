@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { getAlbumID, getAlbumImages } from "./utilites/API";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 const App = () => {
     const [albumIdArray, setAlbumIdArray] = React.useState();
@@ -22,12 +28,21 @@ const App = () => {
                 ));
         });
         albumIdArray && setAlbumOfImages(tmpAlbumIdFromImages);
-        console.log(tmpAlbumIdFromImages);
     }, [albumIdArray]);
 
-    return <div>
+    console.log(albumOfImages);
 
-    </div>
+    return (
+        <div>
+            <Router>
+                {albumOfImages && albumOfImages.length >= 1 && albumOfImages.map((album) => {
+                    return (
+                        <Link to={`/${album}`}>{album}</Link>)
+                })
+                }
+            </Router>
+        </div>
+    );
 };
 
 export default App;

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const API = "https://api.imgur.com/3";
 
 const PARAMS = {
