@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.css';
+import AddBoardBlock from './Components/addBoardBlock';
 
-const App = ({ name }) => {
-    return < div >
-        <h1 > Hello World! </h1>
-        <p> Your name {name} </p>
-        </div>
+const App = () => {
+    const [boards, setBoards] = React.useState([]);
+    console.log(boards);
+
+    return (
+        <>
+            <AddBoardBlock boards={boards} setBoards={setBoards} />
+        </>
+    )
 };
 
 export default App;
